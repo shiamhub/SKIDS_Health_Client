@@ -47,9 +47,8 @@ const AllUsers = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const phone = event.target.phone.value;
+        // event.target.reset();
         const userData = { name, email, phone }
-        console.log(userData);
-        event.target.reset();
         fetch(`https://skids-health-server.vercel.app/update-user/${user._id}`, {
             method: 'PUT',
             headers: {

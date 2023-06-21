@@ -9,15 +9,14 @@ const CreateUsers = () => {
         const email = event.target.email.value;
         const phone = event.target.phone.value;
         const user = { name, email, phone }
-        console.log(user);
         fetch('https://skids-health-server.vercel.app/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(user)
-        }).then(res => res.json()).then(data => {
-            console.log(data);
+        }).then(res => res.json()).then(() => {
+            event.target.reset();
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
